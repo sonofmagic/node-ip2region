@@ -1,31 +1,84 @@
-# npm-lib-rollup-template
+# ip2region-ts
 
-[![codecov](https://codecov.io/gh/sonofmagic/npm-lib-rollup-template/branch/main/graph/badge.svg?token=zn05qXYznt)](https://codecov.io/gh/sonofmagic/npm-lib-rollup-template)
+> forked from ip2region, Thanks to Wu Jian Ping , lionsoul2014 and all ip2region Contributors!
 
-本人用于编写的一个 `npm` 包的一个模板
+`node-ip2region` 的 `typescript` 版本，同时内置 `ip2region.xdb` 默认的数据库。
 
-- 使用 `rollup` 打包 (兼容 `tsc`)
-- 使用 ~~`jest`~~ `vitest` 作为单元测试框架
-- 使用 `eslint` 来规范代码风格，默认风格为 `standard`
-- 输出 `dist` -> `cjs`,`esm` and `.d.ts`
-- 使用 `semantic-release` 来发布 `npm`/`github`
+默认自带的 `ip2region.xdb` 版本日期为 `20230805`，后续会进行更新。
 
-## 为什么使用 `vitest` 而不是原先的 `jest`
+制作此版本是由于 `npm` 上目前的版本比较老，且不能开箱即用，于是 `fork` 一下重新发个包给自己用。
 
-`vitest` 开箱即用,`jest` 在同时遇到 `cjs` 和 `esm` 依赖的时候，支持很差，经常会失败，而且配置复杂，依赖的 `preset` 多，比如 `ts-jest`..
+同时此版本兼容 `commonjs` 和 `esm` 两种包引入方式。
 
-## scripts
+## 使用方式
 
-### rename
+### 安装导入包
 
-执行 `npm run init:rename`
+```sh
+<npm / yarn / pnpm> i ip2region-ts
+```
 
-作用为替换 `package.json` 中默认包含的所有名称为 `npm-lib-rollup-template` 的字段
+```js
+// 导入包
+// commonjs
+const Searcher = require('ip2region-ts')
+// or esm
+import * as Searcher from 'ip2region-ts'
+```
 
-默认替换为新建代码仓库的文件夹名称！
+### 完全基于文件的查询
 
-### bin
+```js
 
-执行 `npm run init:bin`
+// 指定ip2region数据文件路径
+const dbPath = Searcher.defaultDbFile // or 'ip2region.xdb file path'
 
-作用为 `package.json`  添加 `files` 和 `bin`，同时生成 `bin/{{pkg.name}}.js` 和 `src/cli.ts` 文件
+try {
+  // 创建searcher对象
+  const searcher = Searcher.newWithFileOnly(dbPath)
+  // 查询
+  const data = await searcher.search('218.4.167.70')
+  // data: {region: '中国|0|江苏省|苏州市|电信', ioCount: 3, took: 1.342389}
+} catch(e) {
+  console.log(e)
+}
+
+```
+
+### 缓存 `VectorIndex` 索引
+
+```js
+// 指定ip2region数据文件路径
+const dbPath = Searcher.defaultDbFile // 'ip2region.xdb file path'
+
+try {
+  // 同步读取vectorIndex
+  const vectorIndex = Searcher.loadVectorIndexFromFile(dbPath)
+  // 创建searcher对象
+  const searcher = Searcher.newWithVectorIndex(dbPath, vectorIndex)
+  // 查询 await 或 promise均可
+  const data = await searcher.search('218.4.167.70')
+  // data: {region: '中国|0|江苏省|苏州市|电信', ioCount: 2, took: 0.402874}
+} catch(e) {
+  console.log(e)
+}
+```
+
+### 缓存整个 `xdb` 数据
+
+```js
+// 指定ip2region数据文件路径
+const dbPath = Searcher.defaultDbFile // or 'ip2region.xdb file path'
+
+try {
+  // 同步读取buffer
+  const buffer = Searcher.loadContentFromFile(dbPath)
+  // 创建searcher对象
+  const searcher = Searcher.newWithBuffer(buffer)
+  // 查询 await 或 promise均可
+  const data = await searcher.search('218.4.167.70')
+  // data: {region:'中国|0|江苏省|苏州市|电信', ioCount: 0, took: 0.063833}
+} catch(e) {
+  console.log(e)
+}
+```
