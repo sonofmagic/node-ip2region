@@ -2,20 +2,20 @@
 
 > forked from ip2region, Thanks to Wu Jian Ping , lionsoul2014 and all ip2region Contributors!
 
-`node-ip2region` 的 `typescript` 版本，同时内置 `ip2region.xdb` 默认的数据库。
+`ip2region` `node sdk` 的 `typescript` 版本，同时内置 `ip2region.xdb` 作为默认的数据库。
 
 默认自带的 `ip2region.xdb` 版本日期为 `20230805`，后续会进行更新。
 
 制作此版本是由于 `npm` 上目前的版本比较老，且不能开箱即用，于是 `fork` 一下重新发个包给自己用。
 
-同时此版本兼容 `commonjs` 和 `esm` 两种包引入方式。
+同时此版本兼容 `cjs`(`commonjs`) 和 `esm`(`module`) 两种包引入方式。
 
 ## 使用方式
 
 ### 安装导入包
 
 ```sh
-<npm / yarn / pnpm> i ip2region-ts
+<npm/yarn/pnpm> i ip2region-ts
 ```
 
 ```js

@@ -38,7 +38,18 @@
   },
   "keywords": [
     "ip2region",
-    "typescript"
+    "typescript",
+    "commonjs",
+    "cjs",
+    "esm",
+    "module",
+    "ip",
+    "ip-address",
+    "ip-location",
+    "ip-region",
+    "ip-lookup",
+    "ip-search",
+    "ip-geo"
   ],
   "author": "SonOfMagic <qq1324318532@gmail.com>",
   "license": "MIT",
