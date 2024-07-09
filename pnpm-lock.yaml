@@ -31,7 +31,7 @@ devDependencies:
     version: 1.0.2
   '@types/klaw':
     specifier: ^3.0.3
-    version: 3.0.3
+    version: 3.0.6
   '@types/lodash':
     specifier: ^4.14.197
     version: 4.14.197
@@ -1120,8 +1120,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/klaw@3.0.3:
-    resolution: {integrity: sha512-mXlRDFbTLpVysvxahXUQav0hFctgu3Fqr2xmSrpf/ptO/FwOp7SFEGsJkEihwshMbof3/BIiVJ/o42cuOOuv6g==}
+  /@types/klaw@3.0.6:
+    resolution: {integrity: sha512-BErW5TrTz4nzt/c3VRGf0Bug4JyQJ1o807F4mAfXfvOzFZ8SKgFeHJ0T28Y1KtqlMEB+cUgN7S7CsyQDQ/qxqg==}
     dependencies:
       '@types/node': 20.5.7
     dev: true
