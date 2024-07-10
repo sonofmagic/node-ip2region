@@ -52,7 +52,7 @@ devDependencies:
     version: 7.0.3
   defu:
     specifier: ^6.1.2
-    version: 6.1.2
+    version: 6.1.4
   del:
     specifier: ^7.1.0
     version: 7.1.0
@@ -2046,8 +2046,8 @@ packages:
       object-keys: 1.1.1
     dev: true
 
-  /defu@6.1.2:
-    resolution: {integrity: sha512-+uO4+qr7msjNNWKYPHqN/3+Dx3NFkmIzayk2L1MyZQlvgZb/J1A0fo410dpKrN2SnqFjt8n4JL8fDJE0wIgjFQ==}
+  /defu@6.1.4:
+    resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
     dev: true
 
   /del@7.1.0:
