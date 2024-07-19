@@ -43,7 +43,7 @@ devDependencies:
     version: 20.5.7
   '@types/semantic-release':
     specifier: ^20.0.1
-    version: 20.0.1
+    version: 20.0.6
   '@vitest/coverage-v8':
     specifier: ^2.0.0
     version: 2.0.0(vitest@2.0.0)
@@ -1205,8 +1205,8 @@ packages:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
     dev: true
 
-  /@types/semantic-release@20.0.1:
-    resolution: {integrity: sha512-rANSSye4mYTnP6szFSFUPl9GEowqxKjfKKnE06/axdgOLIL3pQNB4u3gXelZ2wiL6J6Clzb8PSyX8Bbv/JOPHw==}
+  /@types/semantic-release@20.0.6:
+    resolution: {integrity: sha512-8YJXvsT1FwMrNdZI1e6NBHPzZWendDiUsLryzxurdup+9LnV3s9fF4NgO0D3LkBfLMnocb4Ax6TQ5yFdF3dXGQ==}
     dependencies:
       '@types/node': 20.5.7
     dev: true
@@ -3105,7 +3105,7 @@ packages:
       source-map: 0.6.1
       wordwrap: 1.0.0
     optionalDependencies:
-      uglify-js: 3.18.0
+      uglify-js: 3.19.0
     dev: true
 
   /has-bigints@1.0.2:
@@ -3721,13 +3721,6 @@ packages:
 
   /lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
-    dev: true
-
-  /magic-string@0.27.0:
-    resolution: {integrity: sha512-8UnnX2PeRAPZuN12svgR9j7M1uWMovg/CEnIwIG0LFkXSJJe4PdfUGiTGl8V9bsBHFUtfVINcSyYxd7q+kx9fA==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
     dev: true
 
   /magic-string@0.30.10:
@@ -5279,8 +5272,8 @@ packages:
     hasBin: true
     dev: true
 
-  /uglify-js@3.18.0:
-    resolution: {integrity: sha512-SyVVbcNBCk0dzr9XL/R/ySrmYf0s372K6/hFklzgcp2lBFyXtw4I7BOdDjlLhE1aVqaI/SHWXWmYdlZxuyF38A==}
+  /uglify-js@3.19.0:
+    resolution: {integrity: sha512-wNKHUY2hYYkf6oSFfhwwiHo4WCHzHmzcXsqXYTN9ja3iApYIFbb2U6ics9hBcYLHcYGQoAlwnZlTrf3oF+BL/Q==}
     engines: {node: '>=0.8.0'}
     hasBin: true
     requiresBuild: true
