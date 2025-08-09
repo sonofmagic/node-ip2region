@@ -4,7 +4,7 @@
 
 `ip2region` `node sdk` 的 `typescript` 版本，同时内置 `ip2region.xdb` 作为默认的数据库。
 
-默认自带的 `ip2region.xdb` 版本日期为 `20230805`，后续有改动会进行更新，[源码中的文件位置](https://github.com/lionsoul2014/ip2region/blob/master/data/ip2region.xdb)。
+默认自带的 `ip2region.xdb` 版本日期为 `20250809`，后续有改动会进行更新，[源码中的文件位置](https://github.com/lionsoul2014/ip2region/blob/master/data/ip2region.xdb)。
 
 制作此版本是由于 `npm` 上目前的版本比较老，且不能开箱即用，于是 `fork` 一下重新发个包给自己用。
 
@@ -29,15 +29,14 @@ import * as Searcher from 'ip2region-ts'
 ### 内置 xdb 默认路径
 
 ```js
-const dbPath = Searcher.defaultDbFile 
+const dbPath = Searcher.defaultDbFile
 ```
 
 ### 完全基于文件的查询
 
 ```js
-
 // 指定ip2region数据文件路径
-const dbPath = Searcher.defaultDbFile 
+const dbPath = Searcher.defaultDbFile
 // or 'path/to/ip2region.xdb file path'
 
 try {
@@ -46,10 +45,10 @@ try {
   // 查询
   const data = await searcher.search('218.4.167.70')
   // data: {region: '中国|0|江苏省|苏州市|电信', ioCount: 3, took: 1.342389}
-} catch(e) {
+}
+catch (e) {
   console.log(e)
 }
-
 ```
 
 ### 缓存 `VectorIndex` 索引
@@ -66,7 +65,8 @@ try {
   // 查询 await 或 promise均可
   const data = await searcher.search('218.4.167.70')
   // data: {region: '中国|0|江苏省|苏州市|电信', ioCount: 2, took: 0.402874}
-} catch(e) {
+}
+catch (e) {
   console.log(e)
 }
 ```
@@ -85,7 +85,8 @@ try {
   // 查询 await 或 promise均可
   const data = await searcher.search('218.4.167.70')
   // data: {region:'中国|0|江苏省|苏州市|电信', ioCount: 0, took: 0.063833}
-} catch(e) {
+}
+catch (e) {
   console.log(e)
 }
 ```

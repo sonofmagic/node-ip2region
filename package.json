@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "packageManager": "pnpm@10.14.0",
-  "description": "node-ip2region",
+  "description": "node-ip2region written in typescript with esm support, latest xdb",
   "author": "SonOfMagic <qq1324318532@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/sonofmagic/node-ip2region#readme",
@@ -43,8 +43,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "data",
-    "dist",
-    "types"
+    "dist"
   ],
   "scripts": {
     "dev": "tsup --watch --sourcemap",
@@ -54,8 +53,6 @@
     "test": "vitest run",
     "init:rename": "node scripts/init/rename.js",
     "init:bin": "node scripts/init/bin.js",
-    "clean": "node scripts/clean.js",
-    "format": "pnpm prettier --check \"src/**/*.{ts,js}\" -w",
     "ls:pack": "npm pack --dry-run",
     "preinstall": "npx only-allow pnpm",
     "semantic-release": "semantic-release",
@@ -68,15 +65,12 @@
   "devDependencies": {
     "@icebreakers/eslint-config": "^1.3.3",
     "@tsconfig/recommended": "^1.0.10",
-    "@types/klaw": "^3.0.7",
     "@types/node": "^24.2.1",
     "@vitest/coverage-v8": "^3.2.4",
-    "cross-env": "^10.0.0",
     "defu": "^6.1.2",
-    "del": "^8.0.0",
     "es-toolkit": "^1.39.8",
     "eslint": "9.33.0",
-    "klaw": "^4.1.0",
+    "jiti": "^2.5.1",
     "only-allow": "^1.2.1",
     "semantic-release": "^24.2.7",
     "tslib": "^2.8.1",
