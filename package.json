@@ -2,7 +2,7 @@
   "name": "ip2region-ts",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@9.6.0",
+  "packageManager": "pnpm@10.14.0",
   "description": "node-ip2region",
   "author": "SonOfMagic <qq1324318532@gmail.com>",
   "license": "MIT",
